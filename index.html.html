@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acervo Audiovisual La Rioja — Archivo General de la Nación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===================== CONFIGURACIÓN ===================== */
+/*  Si cambiás de planilla, editá SHEET_ID y HOJA en el <script> del final  */
+
+:root{
+  --verde-900:#0E3D2C;
+  --verde-700:#16624A;
+  --verde-500:#2A8A66;
+  --ambar:#B4621A;
+  --piedra:#DDE2DA;
+  --piedra-alta:#EFF2EC;
+  --tinta:#14201B;
+  --gris:#67766E;
+  --linea:#C3CCC0;
+
+  --display:'Archivo',system-ui,sans-serif;
+  --lectura:'Newsreader',Georgia,serif;
+  --dato:'IBM Plex Mono',ui-monospace,monospace;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--piedra);
+  color:var(--tinta);
+  font-family:var(--lectura);
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2.5px solid var(--ambar);outline-offset:2px}
+
+/* ===================== ENCABEZADO ===================== */
+.tope{
+  background:var(--verde-900);
+  color:#fff;
+  padding:20px 28px 0;
+}
+.tope-fila{
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  max-width:1320px;margin:0 auto;
+}
+.marca img{height:42px;width:auto;display:block}
+.marca .respaldo{
+  font-family:var(--display);font-weight:800;font-size:15px;
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.titulos{flex:1;min-width:240px}
+.eyebrow{
+  font-family:var(--display);font-size:10.5px;font-weight:600;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--verde-500);margin:0 0 3px;
+}
+.tope h1{
+  font-family:var(--display);font-weight:800;font-size:clamp(19px,2.4vw,27px);
+  letter-spacing:-.015em;margin:0;line-height:1.1;
+}
+.tope h1 span{font-weight:400;color:#9DBFB0}
+
+/* ===================== REGLA DE DÉCADAS (elemento firma) ===================== */
+.regla{
+  max-width:1320px;margin:22px auto 0;
+  display:flex;align-items:flex-end;gap:3px;
+  border-bottom:1px solid rgba(255,255,255,.16);
+}
+.decada{
+  flex:1;background:none;border:0;padding:0 0 7px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  gap:5px;min-width:0;position:relative;
+}
+.barra{
+  background:var(--verde-500);border-radius:1px 1px 0 0;
+  min-height:2px;transition:background .15s;
+}
+.decada:hover .barra{background:#7ED0A9}
+.decada[aria-pressed="true"] .barra{background:var(--ambar)}
+.decada .rot{
+  font-family:var(--dato);font-size:10px;letter-spacing:.04em;
+  color:#8FB2A2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.decada[aria-pressed="true"] .rot{color:#fff}
+.decada .cant{
+  font-family:var(--dato);font-size:9.5px;color:#6E9686;
+}
+
+/* ===================== CUERPO ===================== */
+.marco{
+  max-width:1320px;margin:0 auto;padding:0 28px 80px;
+  display:grid;grid-template-columns:238px 1fr;gap:34px;
+  align-items:start;
+}
+@media (max-width:900px){
+  .marco{grid-template-columns:1fr;gap:0;padding:0 18px 60px}
+}
+
+/* --- barra lateral --- */
+.lateral{position:sticky;top:20px;padding-top:26px}
+@media (max-width:900px){.lateral{position:static;padding-top:16px}}
+
+.buscador{position:relative;margin-bottom:24px}
+.buscador input{
+  width:100%;padding:11px 13px 11px 34px;
+  font-family:var(--display);font-size:14px;
+  background:var(--piedra-alta);color:var(--tinta);
+  border:1.5px solid var(--linea);border-radius:2px;
+}
+.buscador input::placeholder{color:var(--gris)}
+.buscador input:focus{border-color:var(--verde-700);outline:none}
+.buscador svg{
+  position:absolute;left:11px;top:50%;transform:translateY(-50%);
+  width:14px;height:14px;stroke:var(--gris);fill:none;stroke-width:2;
+}
+
+.grupo{margin-bottom:22px}
+.grupo h2{
+  font-family:var(--display);font-size:10px;font-weight:600;
+  letter-spacing:.19em;text-transform:uppercase;color:var(--gris);
+  margin:0 0 9px;padding-bottom:6px;border-bottom:1px solid var(--linea);
+}
+.chip{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  width:100%;background:none;border:0;padding:5px 0;
+  font-family:var(--display);font-size:13.5px;text-align:left;
+  color:var(--tinta);border-radius:2px;
+}
+.chip:hover{color:var(--verde-700)}
+.chip[aria-pressed="true"]{color:var(--ambar);font-weight:600}
+.chip .n{font-family:var(--dato);font-size:11px;color:var(--gris)}
+.chip[aria-pressed="true"] .n{color:var(--ambar)}
+
+.limpiar{
+  width:100%;margin-top:4px;padding:8px;
+  background:none;border:1.5px solid var(--linea);border-radius:2px;
+  font-family:var(--display);font-size:11.5px;font-weight:600;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--gris);
+}
+.limpiar:hover{border-color:var(--verde-700);color:var(--verde-700)}
+
+/* --- resultados --- */
+.principal{padding-top:26px;min-width:0}
+.conteo{
+  font-family:var(--display);font-size:11px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--gris);
+  margin:0 0 14px;
+}
+.conteo b{color:var(--verde-700)}
+
+.ficha{
+  display:grid;grid-template-columns:15px 172px 1fr;
+  background:var(--piedra-alta);
+  border:1px solid var(--linea);border-radius:2px;
+  margin-bottom:11px;overflow:hidden;
+  transition:border-color .14s,transform .14s;
+}
+.ficha:hover{border-color:var(--verde-500)}
+@media (max-width:640px){
+  .ficha{grid-template-columns:15px 1fr}
+  .lamina{display:none}
+}
+
+/* perforación lateral: el color codifica el soporte */
+.perf{
+  background:var(--verde-900);
+  display:flex;flex-direction:column;justify-content:space-evenly;
+  align-items:center;padding:7px 0;
+}
+.perf[data-sop="35mm"]{background:var(--verde-700)}
+.perf[data-sop="cinta"]{background:var(--ambar)}
+.perf[data-sop="video"]{background:#3F5A6B}
+.perf i{
+  display:block;width:6px;height:8px;border-radius:1px;
+  background:var(--piedra-alta);opacity:.82;
+}
+.perf[data-sop="cinta"] i,.perf[data-sop="video"] i{
+  width:7px;height:7px;border-radius:50%;
+}
+
+.lamina{
+  background:var(--verde-900);position:relative;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.lamina img{width:100%;height:100%;object-fit:cover;display:block}
+.lamina .glifo{
+  font-family:var(--dato);font-size:9.5px;letter-spacing:.13em;
+  color:#7FA694;text-transform:uppercase;text-align:center;padding:8px;
+}
+.dur{
+  position:absolute;right:5px;bottom:5px;
+  background:rgba(14,61,44,.9);color:#fff;
+  font-family:var(--dato);font-size:10px;padding:2px 5px;border-radius:1px;
+}
+
+.texto{padding:13px 16px 14px;min-width:0}
+.linea-cod{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:5px}
+.cod{
+  font-family:var(--dato);font-size:12.5px;font-weight:600;
+  color:var(--verde-700);letter-spacing:-.01em;
+}
+.fecha{font-family:var(--dato);font-size:11px;color:var(--gris)}
+.tit{
+  font-family:var(--display);font-weight:600;font-size:15.5px;
+  line-height:1.25;margin:0 0 6px;
+}
+.cuerpo{
+  font-size:14.5px;line-height:1.45;color:#33453C;margin:0 0 10px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.ficha.abierta .cuerpo{-webkit-line-clamp:unset;overflow:visible}
+.rotulos{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.rot-dato{
+  font-family:var(--display);font-size:10px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--linea);border-radius:2px;
+  padding:2.5px 6px;color:var(--gris);
+}
+.ver{
+  background:var(--verde-700);color:#fff;border:0;border-radius:2px;
+  padding:5px 12px;font-family:var(--display);font-size:11px;font-weight:600;
+  letter-spacing:.11em;text-transform:uppercase;
+}
+.ver:hover{background:var(--verde-900)}
+.ver[disabled]{background:none;color:var(--gris);border:1px dashed var(--linea);cursor:not-allowed}
+
+.reproductor{grid-column:1/-1;border-top:1px solid var(--linea);background:#0B1D16}
+.reproductor iframe{width:100%;height:min(62vh,480px);border:0;display:block}
+.reproductor.audio iframe{height:70px}
+.reproductor .pie{
+  padding:8px 14px;display:flex;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;font-family:var(--dato);font-size:10.5px;color:#7FA694;
+}
+.reproductor .pie a{color:#9DD3B8}
+
+.aviso{
+  padding:38px 20px;text-align:center;color:var(--gris);
+  border:1px dashed var(--linea);border-radius:2px;
+}
+.aviso b{display:block;font-family:var(--display);font-size:15px;color:var(--tinta);margin-bottom:6px}
+.aviso code{font-family:var(--dato);font-size:12px;background:var(--piedra-alta);padding:1px 5px}
+
+.pie-pagina{
+  border-top:1px solid var(--linea);margin-top:34px;padding-top:16px;
+  font-family:var(--dato);font-size:11px;color:var(--gris);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="tope">
+  <div class="tope-fila">
+    <div class="marca">
+      <img src="https://larioja.gob.ar/img/la-rioja-gobierno-white.png" alt="Gobierno de la Provincia de La Rioja"
+           onerror="this.outerHTML='&lt;div class=respaldo&gt;La Rioja&lt;/div&gt;'">
+    </div>
+    <div class="titulos">
+      <p class="eyebrow">Archivo General de la Nación</p>
+      <h1>Acervo audiovisual <span>· La Rioja</span></h1>
+    </div>
+  </div>
+  <nav class="regla" id="regla" aria-label="Filtrar por década"></nav>
+</header>
+
+<div class="marco">
+  <aside class="lateral">
+    <div class="buscador">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="Buscar en todo el acervo" autocomplete="off"
+             aria-label="Buscar en el acervo">
+    </div>
+    <div class="grupo"><h2>Soporte</h2><div id="f-soporte"></div></div>
+    <div class="grupo"><h2>Sonido</h2><div id="f-sonido"></div></div>
+    <div class="grupo"><h2>Color</h2><div id="f-color"></div></div>
+    <div class="grupo"><h2>Disponibilidad</h2><div id="f-disp"></div></div>
+    <button class="limpiar" id="limpiar">Quitar filtros</button>
+  </aside>
+
+  <main class="principal">
+    <p class="conteo" id="conteo">Cargando el acervo…</p>
+    <div id="lista"></div>
+    <div class="pie-pagina">
+      <span>Fuente: Archivo General de la Nación</span>
+      <span id="sello"></span>
+    </div>
+  </main>
+</div>
+
+<script>
+/* ========================= CONFIGURACIÓN ========================= */
+const SHEET_ID = '15D____xWuutTrBaLo4c4qxSeTbDiwTWsXt6jsuh5xwk';
+const HOJA     = 'AGN La Rioja';
+/* ================================================================= */
+
+const CSV_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID +
+                '/gviz/tq?tqx=out:csv&sheet=' + encodeURIComponent(HOJA) +
+                '&_=' + Date.now();
+
+/* --- parser CSV (respeta comillas, comas y saltos internos) --- */
+function parseCSV(txt){
+  const filas=[]; let campo='', fila=[], dentro=false;
+  for(let i=0;i<txt.length;i++){
+    const c=txt[i];
+    if(dentro){
+      if(c==='"'){ if(txt[i+1]==='"'){campo+='"';i++;} else dentro=false; }
+      else campo+=c;
+    }else{
+      if(c==='"') dentro=true;
+      else if(c===','){ fila.push(campo); campo=''; }
+      else if(c==='\n'){ fila.push(campo); filas.push(fila); fila=[]; campo=''; }
+      else if(c!=='\r') campo+=c;
+    }
+  }
+  if(campo!==''||fila.length){ fila.push(campo); filas.push(fila); }
+  return filas.filter(f=>f.some(v=>String(v).trim()!==''));
+}
+
+/* --- el soporte se deduce del código, no de la columna SOPORTE --- */
+function soporteDe(cod){
+  const c=(cod||'').toUpperCase();
+  if(/\.C16\./.test(c)) return {clave:'16mm', rot:'Fílmico 16mm'};
+  if(/\.C35\./.test(c)) return {clave:'35mm', rot:'Fílmico 35mm'};
+  if(/\.(CA|D30|D40)\./.test(c)) return {clave:'cinta', rot:'Cinta magnética'};
+  if(/\.(VU|VB|OCG)\./.test(c)) return {clave:'video', rot:'Videotape'};
+  return {clave:'video', rot:'Sin determinar'};
+}
+
+function anioDe(f){
+  const m=String(f||'').match(/(\d{4})/);
+  return m?parseInt(m[1],10):null;
+}
+function decadaDe(a){ return a?Math.floor(a/10)*10:null; }
+
+/* la primera oración de la descripción funciona como título */
+function partirDesc(d){
+  const p=String(d||'').split('|').map(s=>s.trim()).filter(Boolean);
+  const p2=p.filter(s=>!/^(video|audio)$/i.test(s));
+  if(!p2.length) return {tit:'Sin título registrado', resto:''};
+  return {tit:p2[0], resto:p2.slice(1).join(' — ')};
+}
+
+let REGISTROS=[], filtros={soporte:null,sonido:null,color:null,disp:null,decada:null,q:''};
+
+function limpiarValor(v){
+  const s=String(v||'').trim();
+  return (s===''||s==='N'||s==='B')?'':s;
+}
+
+async function cargar(){
+  let txt;
+  try{
+    const r=await fetch(CSV_URL);
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    txt=await r.text();
+  }catch(e){
+    document.getElementById('conteo').textContent='';
+    document.getElementById('lista').innerHTML=
+      '<div class="aviso"><b>No se pudo leer la planilla</b>'+
+      'Revisá que <code>AGN_La_Rioja</code> esté compartida como '+
+      '“Cualquiera con el enlace: Lector”. Sin eso el buscador no puede consultarla.</div>';
+    return;
+  }
+
+  const filas=parseCSV(txt);
+  if(filas.length<2){ document.getElementById('conteo').textContent='La planilla está vacía.'; return; }
+
+  const enc=filas[0].map(h=>h.trim().toUpperCase());
+  const col=n=>enc.indexOf(n);
+  const iCod=col('CODIGO'), iFec=col('FECHA'), iDesc=col('DESCRIPCION'),
+        iDur=col('DURACION'), iSon=col('SONIDO'), iCol=col('COLOR'),
+        iId=col('FILE_ID'), iTipo=col('TIPO'), iUrl=col('URL');
+
+  REGISTROS=filas.slice(1).map((f,n)=>{
+    const cod=(f[iCod]||'').trim();
+    if(!cod) return null;
+    const {tit,resto}=partirDesc(f[iDesc]);
+    const ids=String(iId>=0?f[iId]:'').split('|').map(s=>s.trim()).filter(Boolean);
+    const anio=anioDe(f[iFec]);
+    const sop=soporteDe(cod);
+    let color=limpiarValor(f[iCol]); if(color==='')color='B/N';
+    return {
+      n, cod, tit, resto,
+      desc:String(f[iDesc]||'').replace(/\s*\|\s*/g,' — '),
+      fecha:(f[iFec]||'').trim(), anio, decada:decadaDe(anio),
+      dur:(iDur>=0?f[iDur]:'').trim(),
+      sonido:limpiarValor(f[iSon])||'Sin dato',
+      color, sop, ids,
+      tipo:(iTipo>=0?f[iTipo]:'').trim().toLowerCase(),
+      url:(iUrl>=0?f[iUrl]:'').trim(),
+      texto:(cod+' '+(f[iDesc]||'')+' '+(f[iFec]||'')+' '+sop.rot).toLowerCase()
+    };
+  }).filter(Boolean);
+
+  construirRegla(); construirFiltros(); pintar();
+  document.getElementById('sello').textContent=REGISTROS.length+' registros · actualizado en vivo';
+}
+
+/* ---------- regla de décadas ---------- */
+function construirRegla(){
+  const cont={}; let sinFecha=0;
+  REGISTROS.forEach(r=>{ if(r.decada) cont[r.decada]=(cont[r.decada]||0)+1; else sinFecha++; });
+  const decs=Object.keys(cont).map(Number).sort((a,b)=>a-b);
+  if(!decs.length) return;
+  const desde=decs[0], hasta=decs[decs.length-1];
+  const max=Math.max(...Object.values(cont), sinFecha, 1);
+  const wrap=document.getElementById('regla');
+  let html='';
+  for(let d=desde; d<=hasta; d+=10){
+    const c=cont[d]||0;
+    html+='<button class="decada" data-dec="'+d+'" aria-pressed="false" '+
+          (c?'':'disabled ')+'title="'+c+' registros">'+
+          '<span class="cant">'+(c||'')+'</span>'+
+          '<span class="barra" style="height:'+(c?Math.max(3,c/max*40):1)+'px"></span>'+
+          '<span class="rot">'+d+'</span></button>';
+  }
+  if(sinFecha) html+='<button class="decada" data-dec="sf" aria-pressed="false" title="'+sinFecha+' registros">'+
+                     '<span class="cant">'+sinFecha+'</span>'+
+                     '<span class="barra" style="height:'+Math.max(3,sinFecha/max*40)+'px"></span>'+
+                     '<span class="rot">s/f</span></button>';
+  wrap.innerHTML=html;
+  wrap.querySelectorAll('.decada').forEach(b=>b.addEventListener('click',()=>{
+    const v=b.dataset.dec==='sf'?'sf':parseInt(b.dataset.dec,10);
+    filtros.decada = filtros.decada===v ? null : v;
+    wrap.querySelectorAll('.decada').forEach(x=>
+      x.setAttribute('aria-pressed', String((x.dataset.dec==='sf'?'sf':parseInt(x.dataset.dec,10))===filtros.decada)));
+    pintar();
+  }));
+}
+
+/* ---------- filtros laterales ---------- */
+function construirFiltros(){
+  const grupos=[
+    ['f-soporte','soporte', r=>r.sop.rot],
+    ['f-sonido','sonido',  r=>r.sonido],
+    ['f-color','color',    r=>r.color],
+    ['f-disp','disp',      r=>r.ids.length?'Con material en línea':'Sin material cargado']
+  ];
+  grupos.forEach(([id,clave,fn])=>{
+    const cont={}; REGISTROS.forEach(r=>{const v=fn(r); cont[v]=(cont[v]||0)+1;});
+    const cajon=document.getElementById(id);
+    cajon.innerHTML=Object.keys(cont).sort().map(v=>
+      '<button class="chip" data-v="'+v.replace(/"/g,'&quot;')+'" aria-pressed="false">'+
+      '<span>'+v+'</span><span class="n">'+cont[v]+'</span></button>').join('');
+    cajon.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{
+      filtros[clave]= filtros[clave]===b.dataset.v ? null : b.dataset.v;
+      cajon.querySelectorAll('.chip').forEach(x=>
+        x.setAttribute('aria-pressed', String(x.dataset.v===filtros[clave])));
+      pintar();
+    }));
+  });
+}
+
+function pasa(r){
+  if(filtros.q && r.texto.indexOf(filtros.q)===-1) return false;
+  if(filtros.soporte && r.sop.rot!==filtros.soporte) return false;
+  if(filtros.sonido && r.sonido!==filtros.sonido) return false;
+  if(filtros.color && r.color!==filtros.color) return false;
+  if(filtros.disp){
+    const v=r.ids.length?'Con material en línea':'Sin material cargado';
+    if(v!==filtros.disp) return false;
+  }
+  if(filtros.decada!==null){
+    if(filtros.decada==='sf'){ if(r.decada) return false; }
+    else if(r.decada!==filtros.decada) return false;
+  }
+  return true;
+}
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+function pintar(){
+  const res=REGISTROS.filter(pasa);
+  document.getElementById('conteo').innerHTML=
+    res.length===REGISTROS.length
+      ? '<b>'+res.length+'</b> registros en el acervo'
+      : '<b>'+res.length+'</b> de '+REGISTROS.length+' registros';
+
+  const lista=document.getElementById('lista');
+  if(!res.length){
+    lista.innerHTML='<div class="aviso"><b>Sin coincidencias</b>Probá con menos filtros o con otra palabra.</div>';
+    return;
+  }
+
+  lista.innerHTML=res.map(r=>{
+    const perf='<div class="perf" data-sop="'+r.sop.clave+'">'+'<i></i>'.repeat(6)+'</div>';
+    const mini = r.ids.length && r.tipo!=='audio'
+      ? '<img src="https://drive.google.com/thumbnail?id='+r.ids[0]+'&sz=w400" alt="" loading="lazy" '+
+        'onerror="this.parentNode.innerHTML=\'<span class=glifo>'+esc(r.sop.rot)+'</span>\'">'
+      : '<span class="glifo">'+esc(r.tipo==='audio'?'Registro sonoro':r.sop.rot)+'</span>';
+    const lamina='<div class="lamina">'+mini+(r.dur?'<span class="dur">'+esc(r.dur)+'</span>':'')+'</div>';
+
+    const rotulos=[r.sop.rot, r.sonido, r.color].filter(Boolean)
+      .map(t=>'<span class="rot-dato">'+esc(t)+'</span>').join('');
+
+    const botones = r.ids.length
+      ? r.ids.map((id,k)=>'<button class="ver" data-id="'+id+'" data-tipo="'+r.tipo+'" data-fila="'+r.n+'">'+
+          (r.ids.length>1?'Ver parte '+(k+1):(r.tipo==='audio'?'Escuchar':'Ver'))+'</button>').join('')
+      : '<button class="ver" disabled>Sin material en línea</button>';
+
+    return '<article class="ficha" id="f'+r.n+'">'+perf+lamina+
+      '<div class="texto">'+
+        '<div class="linea-cod"><span class="cod">'+esc(r.cod)+'</span>'+
+        (r.fecha?'<span class="fecha">'+esc(r.fecha)+'</span>':'<span class="fecha">sin fecha</span>')+'</div>'+
+        '<h3 class="tit">'+esc(r.tit)+'</h3>'+
+        (r.resto?'<p class="cuerpo">'+esc(r.resto)+'</p>':'')+
+        '<div class="rotulos">'+rotulos+botones+'</div>'+
+      '</div></article>';
+  }).join('');
+
+  lista.querySelectorAll('.ver[data-id]').forEach(b=>b.addEventListener('click',()=>abrir(b)));
+  lista.querySelectorAll('.cuerpo').forEach(p=>p.addEventListener('click',()=>
+    p.closest('.ficha').classList.toggle('abierta')));
+}
+
+function abrir(btn){
+  const ficha=btn.closest('.ficha');
+  const id=btn.dataset.id, esAudio=btn.dataset.tipo==='audio';
+  const previo=ficha.querySelector('.reproductor');
+  if(previo && previo.dataset.id===id){ previo.remove(); return; }
+  if(previo) previo.remove();
+  document.querySelectorAll('.reproductor').forEach(p=>p.remove());
+
+  const box=document.createElement('div');
+  box.className='reproductor'+(esAudio?' audio':'');
+  box.dataset.id=id;
+  box.innerHTML='<iframe src="https://drive.google.com/file/d/'+id+'/preview" '+
+                'allow="autoplay" allowfullscreen title="Reproductor"></iframe>'+
+                '<div class="pie"><span>'+(esAudio?'Registro sonoro':'Registro audiovisual')+
+                ' · Archivo General de la Nación</span>'+
+                '<a href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener">'+
+                'Abrir en pestaña nueva ↗</a></div>';
+  ficha.appendChild(box);
+  ficha.classList.add('abierta');
+  box.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ---------- controles ---------- */
+let t;
+document.getElementById('q').addEventListener('input',e=>{
+  clearTimeout(t);
+  t=setTimeout(()=>{ filtros.q=e.target.value.trim().toLowerCase(); pintar(); },160);
+});
+document.getElementById('limpiar').addEventListener('click',()=>{
+  filtros={soporte:null,sonido:null,color:null,disp:null,decada:null,q:''};
+  document.getElementById('q').value='';
+  document.querySelectorAll('.chip,.decada').forEach(b=>b.setAttribute('aria-pressed','false'));
+  pintar();
+});
+
+cargar();
+</script>
+</body>
+</html>
