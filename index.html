@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Acervo Audiovisual AGN — La Rioja | Gobierno de La Rioja</title>
-<meta name="description" content="Buscador del acervo audiovisual del Archivo General de la Nación relacionado con la Provincia de La Rioja.">
+<title>Acervo Audiovisual AHPLR — La Rioja | Gobierno de La Rioja</title>
+<meta name="description" content="Buscador del acervo audiovisual del Archivo Histórico de la Provincia de La Rioja - Acervo Audiovisual.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
@@ -14,17 +14,17 @@
    Para ajustar el verde institucional, cambiar --verde.
    ============================================================ */
 :root{
-  --verde:#00913F;          /* verde institucional La Rioja */
-  --verde-osc:#00702F;      /* verde oscuro (hover, foco) */
-  --verde-prof:#004F22;     /* verde profundo (barra superior) */
-  --verde-claro:#E8F4EC;    /* verde muy claro (fondos suaves) */
-  --tinta:#1B1F1D;          /* texto principal */
-  --tinta-2:#4A524D;        /* texto secundario */
-  --tinta-3:#6E7872;        /* texto terciario */
+  --verde:#00913F;       /* verde institucional La Rioja */
+  --verde-osc:#00702F;   /* verde oscuro (hover, foco) */
+  --verde-prof:#004F22;  /* verde profundo (barra superior) */
+  --verde-claro:#E8F4EC; /* verde muy claro (fondos suaves) */
+  --tinta:#1B1F1D;       /* texto principal */
+  --tinta-2:#4A524D;     /* texto secundario */
+  --tinta-3:#6E7872;     /* texto terciario */
   --papel:#FFFFFF;
   --papel-2:#F5F7F5;
   --linea:#D8DEDA;
-  --foco:#B45309;           /* anillo de foco: contraste sobre verde y blanco */
+  --foco:#B45309;        /* anillo de foco: contraste sobre verde y blanco */
   --radio:4px;
   --sombra:0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
 }
@@ -48,7 +48,6 @@ body{
   overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-
 /* ---- Barra institucional ---- */
 .barra-inst{
   background:var(--verde-prof);color:#fff;
@@ -58,7 +57,6 @@ body{
 }
 .barra-inst a{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .barra-inst a:hover{text-decoration:none}
-
 /* ---- Encabezado ---- */
 header.principal{
   background:var(--verde);color:#fff;
@@ -93,7 +91,6 @@ header.principal{
 }
 .btn-actualizar.cargando .spin{display:block;animation:girar .7s linear infinite}
 @keyframes girar{to{transform:rotate(360deg)}}
-
 /* ---- Estado de datos ---- */
 .franja-estado{
   padding:7px 24px;font-size:.78rem;display:flex;
@@ -103,7 +100,6 @@ header.principal{
 .franja-estado.aviso{background:#FDF3D7;color:#7A5B00}
 .franja-estado.error{background:#FBE4E4;color:#8A1C1C}
 .punto{width:9px;height:9px;border-radius:50%;background:currentColor;flex-shrink:0}
-
 /* ---- Estructura ---- */
 .contenedor{display:flex;flex:1;min-height:0}
 aside{
@@ -127,7 +123,6 @@ aside{
   font-size:1.25rem;line-height:1;padding:5px 8px;border-radius:var(--radio);
 }
 .campo-busqueda button:hover{color:var(--tinta)}
-
 fieldset.filtros{border:none;padding:0 20px 4px}
 fieldset.filtros legend{
   font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
@@ -146,7 +141,6 @@ fieldset.filtros legend{
 }
 .chips button:hover{border-color:var(--verde);color:var(--verde-osc)}
 .chips button[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:#fff}
-
 .resumen{
   padding:10px 20px;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;
   color:var(--tinta-2);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);
@@ -160,7 +154,6 @@ fieldset.filtros legend{
   cursor:pointer;text-decoration:underline;text-underline-offset:2px;padding:2px;
 }
 .resumen button[hidden]{display:none}
-
 ul.listado{list-style:none;overflow-y:auto;flex:1;min-height:0}
 ul.listado::-webkit-scrollbar{width:9px}
 ul.listado::-webkit-scrollbar-thumb{background:#C3CCC6;border-radius:5px}
@@ -188,7 +181,6 @@ ul.listado button[aria-current="true"]{
   margin-top:3px;font-variant-numeric:tabular-nums;
 }
 .vacio{padding:40px 24px;text-align:center;color:var(--tinta-3);font-size:.9rem}
-
 main{flex:1;overflow-y:auto;min-width:0;background:var(--papel)}
 .ficha{max-width:900px;padding:28px 40px 60px}
 .ficha-etiquetas{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
@@ -216,7 +208,6 @@ main{flex:1;overflow-y:auto;min-width:0;background:var(--papel)}
   font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;
 }
 .btn-enlace:hover{border-color:var(--verde);background:var(--verde-claro)}
-
 .reproductor{
   background:#0D110F;border-radius:var(--radio);overflow:hidden;
   margin-bottom:22px;box-shadow:var(--sombra);
@@ -247,7 +238,6 @@ main{flex:1;overflow-y:auto;min-width:0;background:var(--papel)}
   border-top:1px solid rgba(255,255,255,.08);
 }
 .pie-repro a{color:#7FD3A0;text-decoration:underline;text-underline-offset:2px}
-
 .bloque{margin-bottom:24px}
 .bloque h3{
   font-size:.74rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
@@ -266,19 +256,16 @@ dl.tecnica dt{font-weight:700;color:var(--tinta-2);font-size:.76rem;letter-spaci
 dl.tecnica dd{color:var(--tinta)}
 .galeria{display:flex;gap:12px;flex-wrap:wrap}
 .galeria img{max-width:230px;border:1px solid var(--linea);border-radius:var(--radio)}
-
 .bienvenida{padding:64px 40px;max-width:640px;text-align:center;margin:0 auto}
 .bienvenida img{height:88px;margin-bottom:22px;opacity:.9}
 .bienvenida h2{font-family:'Source Serif 4',Georgia,serif;font-size:1.6rem;font-weight:600;margin-bottom:12px}
 .bienvenida p{color:var(--tinta-2);line-height:1.7}
-
 footer{
   background:var(--verde-prof);color:rgba(255,255,255,.9);
   padding:16px 24px;font-size:.78rem;display:flex;
   justify-content:space-between;gap:16px;flex-wrap:wrap;
 }
 footer a{color:#fff}
-
 /* ---- Responsive ---- */
 .btn-volver{display:none}
 @media (max-width:900px){
@@ -306,12 +293,10 @@ footer a{color:#fff}
 </head>
 <body>
 <a class="skip-link" href="#buscar">Saltar al buscador</a>
-
 <div class="barra-inst">
   <span>Gobierno de la Provincia de La Rioja</span>
-  <span>Archivo General de la Nación · Acervo Audiovisual</span>
+  <span>Archivo Histórico de la Provincia de La Rioja - Acervo Audiovisual</span>
 </div>
-
 <header class="principal">
   <div class="marca">
     <img src="https://larioja.gob.ar/img/marca-la-rioja-verde.png"
@@ -319,7 +304,7 @@ footer a{color:#fff}
          onerror="this.style.display='none';this.nextElementSibling.style.display='none'">
     <div class="divisoria" aria-hidden="true"></div>
     <div class="titulos">
-      <h1>Acervo Audiovisual AGN — La Rioja</h1>
+      <h1>Acervo Audiovisual AHPLR — La Rioja</h1>
       <p>Documentos históricos audiovisuales en línea</p>
     </div>
   </div>
@@ -334,12 +319,10 @@ footer a{color:#fff}
     </button>
   </div>
 </header>
-
 <div class="franja-estado ok" id="franjaEstado" role="status" aria-live="polite">
   <span class="punto" aria-hidden="true"></span>
   <span id="textoEstado">Cargando el acervo…</span>
 </div>
-
 <div class="contenedor">
   <aside aria-label="Búsqueda y filtros">
     <div class="buscador">
@@ -355,7 +338,6 @@ footer a{color:#fff}
       </div>
       <p id="ayudaBuscar" class="sr-only">Se busca en el título, el contenido y el código de cada registro.</p>
     </div>
-
     <fieldset class="filtros">
       <legend>Filtros</legend>
       <div class="grupo-filtro"><span id="lblTipo">Tipo de documento</span>
@@ -367,43 +349,37 @@ footer a{color:#fff}
       <div class="grupo-filtro"><span id="lblColor">Color</span>
         <div class="chips" id="filtroColor" role="group" aria-labelledby="lblColor"></div></div>
     </fieldset>
-
     <p class="resumen">
       <span><b id="cantidad">0</b> resultados</span>
       <button type="button" id="btnLimpiarFiltros" hidden>Limpiar filtros</button>
     </p>
-
     <ul class="listado" id="listado" aria-label="Resultados de la búsqueda"></ul>
   </aside>
-
   <main id="detalle" tabindex="-1" aria-live="polite" aria-label="Ficha del documento">
     <div class="bienvenida">
       <img src="https://larioja.gob.ar/img/marca-la-rioja-verde.png" alt="" onerror="this.style.display='none'">
-      <h2>Acervo audiovisual del AGN sobre La Rioja</h2>
+      <h2>Acervo audiovisual del Archivo Histórico de la Provincia de La Rioja</h2>
       <p>Seleccioná un registro del listado para ver su ficha completa y reproducir el material.
-         Podés buscar por palabra clave, persona, lugar o código de archivo.</p>
+      Podés buscar por palabra clave, persona, lugar o código de archivo.</p>
     </div>
   </main>
 </div>
-
 <footer>
-  <span>Gobierno de la Provincia de La Rioja · Archivo General de la Nación</span>
+  <span>Gobierno de la Provincia de La Rioja · Archivo Histórico de la Provincia de La Rioja - Acervo Audiovisual</span>
   <span id="pieActualizacion"></span>
 </footer>
-
 <script>
 "use strict";
 /* ============================================================
    CONFIGURACIÓN — editar sólo esto si cambia la planilla
    ============================================================ */
 const CONFIG = {
-  SHEET_ID:  "15D____xWuutTrBaLo4c4qxSeTbDiwTWsXt6jsuh5xwk",
-  HOJA:      "AGN La Rioja",
+  SHEET_ID: "15D____xWuutTrBaLo4c4qxSeTbDiwTWsXt6jsuh5xwk",
+  HOJA: "AGN La Rioja",
   // URL alternativa (Archivo > Compartir > Publicar en la web > CSV).
   // Si se completa, tiene prioridad sobre el método gviz.
   CSV_PUBLICADO: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRKCIiPxqhkuZXjazQfgWYQV2VsHq4acEjKix9pFCnWZa3UBk25bzun_JuaLEMVnRp17BD1e9amyuWT/pub?gid=1116597511&single=true&output=csv"
 };
-
 /* Instantánea local: si no se puede leer la planilla, la página igual funciona. */
 const DATOS_LOCALES = [{"CODIGO":"949.C16.1.A","FECHA":"1/1/1921","DESCRIPCION":"Video | Banco de la Nación Argentina. | Instituciones, Banco de la Nación Argentina, Sucursales, Provincias","SOPORTE":"N","DURACION":"00:06:00","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/13LsQgpB1TFyL9qqFq8yoROw2MPi-qhh4/view","FILE_ID":"13LsQgpB1TFyL9qqFq8yoROw2MPi-qhh4","TIPO":"video","ARCHIVO":"t_949_7_16mm.m4v"},{"CODIGO":"1540.C16.1.A","FECHA":"4/8/1969","DESCRIPCION":"Video | La Rioja | La Rioja Capital, Centro de la ciudad, Edificios Históricos, Horno de barro, Trabajo rural.","SOPORTE":"Fílmico","DURACION":"00:10:00","SONIDO":"Muda","COLOR":"Color","IMAGEN":"","URL":"https://drive.google.com/file/d/1a-tGnyZD-Ef5hV44xyzpsWN7ISqcddkd/view","FILE_ID":"1a-tGnyZD-Ef5hV44xyzpsWN7ISqcddkd","TIPO":"video","ARCHIVO":"t_1540_14_16mm.m4v"},{"CODIGO":"1258.C16.1.A","FECHA":"1/1/1969","DESCRIPCION":"Video | Noticiero Panamericano N 1531 | Mariano Mores, Càtulo Castillo, Tito Lusiardo y Hugo del Carril. Pierre Cardin, azafatas Títeres, Jorge Viladrich","SOPORTE":"N","DURACION":"00:10:00","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1YzB_YKzgQ_3xecOcTWSrwMTBLwp5YUWJ/view","FILE_ID":"1YzB_YKzgQ_3xecOcTWSrwMTBLwp5YUWJ","TIPO":"video","ARCHIVO":"t_1258_46_16mm.m4v"},{"CODIGO":"626.C35.1.A","FECHA":"1/9/1956","DESCRIPCION":"Video | Noticiero Panamericano N 851 | Participan Carlos Perette y José Aguirre Cámara, Asociaciones, Animales domésticos, Veterinarios, Consultorios, Caniles, Vias del Ferrocarril Sarmiento en Ciudadela.Se quema una pira hecha con pipas para fumar el opio, Cancha de Boca Juniors","SOPORTE":"N","DURACION":"00:09:00","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1YlzVT0x6HQlrQ7HhpX_b3YhQnAPCGX-V/view","FILE_ID":"1YlzVT0x6HQlrQ7HhpX_b3YhQnAPCGX-V","TIPO":"video","ARCHIVO":"t_626_58_35mm.m4v"},{"CODIGO":"835.C35.1.A","FECHA":"23/5/1959","DESCRIPCION":"Video | Noticiero de América N 168 | Gobernador de Santa Fe Dr. H. Segnis, Nelly Sayago, Instituto Antituberculoso, Salud Pública, Instituto Asilo Román Rosel, Ciegos, Mujeres, Mantillas, Cultos, Procesión, | 00:04:38 Artesanos ceramistas en la provincia de La Rioja y minas de caolín","SOPORTE":"N","DURACION":"00:08:00","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1jrJ9r2gggIjEHZG8WS2f87hhn5MCzF09/view","FILE_ID":"1jrJ9r2gggIjEHZG8WS2f87hhn5MCzF09","TIPO":"video","ARCHIVO":"t_835_38_35mm.m4v"},{"CODIGO":"1246.C16.1.A","FECHA":"1/1/1968","DESCRIPCION":"Video | Noticiero de América N 706 | Ante Garmaz, Federico, Mora Furtado, Angélica Gonzalez, Elsa Rosas, Andrés Percivale, Nicolás Mancera, Gral Teglia, Secretario de Comunicaciones, Minas de Cobre, | 00:05:20 Fabricaciones Militares implementa el plan Minero Nacional Cordillerano Norte,que abarca las provincias de La Rioja,Catamarca,Salta,Jujuy,Tucumán y Santiago del Estero.","SOPORTE":"N","DURACION":"00:08:00","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1zSR_hiroEB4Z4Slv3KgDglkjqUhtVeCP/view","FILE_ID":"1zSR_hiroEB4Z4Slv3KgDglkjqUhtVeCP","TIPO":"video","ARCHIVO":"t_1246_39_16mm.m4v"},{"CODIGO":"82.C16.1.A","FECHA":"17/6/1950","DESCRIPCION":"Video | Registro N 31 | Palco Presidencial, Jura de la Bandera, Conscriptos, Entrega de pensiones, Eva Perón, Juan Domingo Perón, Mausoleo de Manuel Belgrano, Ramón Carrillo, Alfredo Gómez Morales, Teatro Colon, Enrique García, Pedro Passicot, Reunión de Gobernadores.","SOPORTE":"N","DURACION":"00:08:00","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1wYLdx-h4BxbcFFCCjbquatXi4m2bavEh/view","FILE_ID":"1wYLdx-h4BxbcFFCCjbquatXi4m2bavEh","TIPO":"video","ARCHIVO":"t_82_51_16mm.m4v"},{"CODIGO":"57.C16.1.A","FECHA":"1/3/1950","DESCRIPCION":"Video | Registro N 28 | Casa Rosada, Salón Blanco, Juan Domingo Perón, Condecoraciones, Eva Perón, Industria Panificadora, Pan Vitagran, Pan Lactal, Oscar Ivanisevich, Marina Mercante, Buque Río Cuarto, Alfredo Gómez Morales, Coronel D. Scher Vicegobernador militar de Comodoro Rivadavia, Hipólito Paz, Convenios. REUNIÓN DE MINISTROS DE EDUCACIÓN DE LAS PROVINCIAS Y TERRITORIOS.En el ministerio de Educación se realiza el acto inaugural de la Conferencia de ministros de Educación de todo el país convocada con el objeto de coordinar la campaña sanmartiniana de alfabetización. Durante el acto hacen uso de la palabra el ministro de Educación Dr. Oscar Ivanissevich el secretario General de Educación prof. Carlos Frattini y el ministro de Educación de la Provincia de Bs.As. Dr.Julio A Avanza asisten al mismo: el subsecretario Universitario Dr.Carlos I. Rivas los ministros de Educación de Tucumán Ramón Bustos Códoba Alberto Leiva Castro La Rioja Ramón Torres Molina, San Juan Alfredo Marín, Salta Oscar Araoz Alemán el presidente del Consejo Provincial de Educación de San Luis Dr.Alfredo Zabala Ortíz el delegado de Mendoza Dr.Juan A .Dufau el gobernador de Misiones Eduardo Reguero el vicegobernador militar de Comodoro Rivadavia coronel D. Scher y otras personas. 10 de Abril de 1950.","SOPORTE":"N","DURACION":"00:07:57","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1QUh1dpK7aRraj-Kb0j70jbFeM_GLV6MV/view","FILE_ID":"1QUh1dpK7aRraj-Kb0j70jbFeM_GLV6MV","TIPO":"video","ARCHIVO":"57.C16.VU78.003500.mp4"},{"CODIGO":"662.C35.1.A","FECHA":"30/8/1956","DESCRIPCION":"Video | Argentina al día N 10 | Homenaje a Sarmiento. Monumento-Pianista Vencio Vanini toca durante 48 horas, Cancha de Boca Juniors.00:02:21 El presidente de facto Aramburu llega al aeropuerto de la provincia de La Rioja, donde es recibido por el interventor Altube. Luego de la concentración cívica, en el Regimiento 15 asisten a la devolución de la bandera y a un desfile.","SOPORTE":"N","DURACION":"00:10:25","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1a88Y9o2twwsyDn5D9o8nVkBJUgIGNpSy/view","FILE_ID":"1a88Y9o2twwsyDn5D9o8nVkBJUgIGNpSy","TIPO":"video","ARCHIVO":"t_622_57_35mm.m4v"},{"CODIGO":"1152.C16.1.A","FECHA":"","DESCRIPCION":"Video | La Rioja | Provincia de La Rioja, Aeropuerto de La Rioja, Catedral. La Rioja-Documental con los aspectos de toda la provincia (Temático | La Rioja- Catedral-Casa de Gobierno-convento de Santo Domingo-Cerros Colorados-Dique los Sauces-Señor de la Peña-Cuesta de Miranda (Temático) | La Rioja Cultural-Museo Inca Hua (arqueológico)-Los Antigales (enterramientos indígenas)-Samay Huasi casa donde nació Joaquín V. González (Temático) | La Rioja-Palmeras datileras-Olivo de Araujo-viñedos - (Temático) | La Rioja - Danza y Canciones (Temático) | La Rioja-Mogotes colorados refugio del Coronel Vicente Peñaloza (el Chacho)-Valle Fertil en Chilecito(fin del mundo en lengua aimara) (Temático)","SOPORTE":"N","DURACION":"00:10:49","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1qAGO4EGCs0lPQmPpJC1mZaB0jR59T5XF/view","FILE_ID":"1qAGO4EGCs0lPQmPpJC1mZaB0jR59T5XF","TIPO":"video","ARCHIVO":"1152.C16.VU36.001010.mp4"},{"CODIGO":"1001.C16.1.A","FECHA":"28/9/1948","DESCRIPCION":"Video | Sucesos de las Américas N 177 | Hijas de Maria Coyas, misa de campaña, Virgen de las Mercedes, Iglesia de Santo Domingo, Enrique García, Fidel Anadón. Campaña Nacional de Salud, incluye contingente a La Rioja","SOPORTE":"N","DURACION":"00:09:54","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/17MabSiJ1sWMll5SU5w9nXL6jJ3rtHmzT/view","FILE_ID":"17MabSiJ1sWMll5SU5w9nXL6jJ3rtHmzT","TIPO":"video","ARCHIVO":"1001.C16.VU3(N).001852.mp4"},{"CODIGO":"1569.C16.1.A","FECHA":"","DESCRIPCION":"Video | Argentina al día e INFORMATIVO Cinematográfico EPA N 844-614 | Catedral de la Provincia de la Rioja","SOPORTE":"N","DURACION":"00:06:45","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/16szchTGlRDbFZybyU_4nFCNgHwF7go1S/view","FILE_ID":"16szchTGlRDbFZybyU_4nFCNgHwF7go1S","TIPO":"video","ARCHIVO":"AGN_T1569_16mm_ConAudio.mp4"},{"CODIGO":"911.C35.1.A","FECHA":"","DESCRIPCION":"Video | Bellezas Argentinas","SOPORTE":"N","DURACION":"00:11:00","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1wzgUuCBPRyQF6ZzkBS8w4jx7xnJ8Gmf5/view","FILE_ID":"1wzgUuCBPRyQF6ZzkBS8w4jx7xnJ8Gmf5","TIPO":"video","ARCHIVO":"AGN_T911_35mm_ConAudio.mp4"},{"CODIGO":"1504.C16.1.A","FECHA":"","DESCRIPCION":"Video | Noticiero Panamericano N 1656","SOPORTE":"N","DURACION":"00:05:01","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1X5VFteE4ItB2iLgDbWrTLfMF4SlybFMb/view","FILE_ID":"1X5VFteE4ItB2iLgDbWrTLfMF4SlybFMb","TIPO":"video","ARCHIVO":"AGN_T1504_16mm_ConAudio.mp4"},{"CODIGO":"192.CA.AGN","FECHA":"16/2/1962","DESCRIPCION":"Audio | Inauguración del primer tramo del camino internacional que une la República Argentina con la República de Chile. Año 1962. Casa de Gobierno de la Provincia de La Rioja.","SOPORTE":"N","DURACION":"00:25:25","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1nzwdVuM0a3xUxG06v5BtBZLxCdjvYgad/view","FILE_ID":"1nzwdVuM0a3xUxG06v5BtBZLxCdjvYgad","TIPO":"audio","ARCHIVO":"C_AGN_192_L2_02.wav"},{"CODIGO":"366.CA.AGN","FECHA":"1/8/1969","DESCRIPCION":"Audio | Acto de inauguración de la Primera reunión de cultura en La Rioja. Palabras de apertura.","SOPORTE":"N","DURACION":"00:44:41","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1ffFOJXmgxo1zmddd1xl_2ibNtGjAPXcv/view","FILE_ID":"1ffFOJXmgxo1zmddd1xl_2ibNtGjAPXcv","TIPO":"audio","ARCHIVO":"C_AGN_366_L1_02.wav"},{"CODIGO":"183.CA.RA","FECHA":"18/3/1976","DESCRIPCION":"Audio | Declaraciones del Dr. Menem antes de regresar a su provincia, La Rioja.","SOPORTE":"N","DURACION":"00:04:55","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1STJ81A8DaXPTXl9RqAo6QjfRbmxZT6ej/view","FILE_ID":"1STJ81A8DaXPTXl9RqAo6QjfRbmxZT6ej","TIPO":"audio","ARCHIVO":"C_RA_183_L1_03.wav"},{"CODIGO":"190.C16.1.A","FECHA":"","DESCRIPCION":"Video | Noticiero de América N 694","SOPORTE":"N","DURACION":"00:06:42","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1xbP5YpdhVs-YC0Wjns0C-tSakwfShZpC/view","FILE_ID":"1xbP5YpdhVs-YC0Wjns0C-tSakwfShZpC","TIPO":"video","ARCHIVO":"190.C16. VU190. 001448.mp4"},{"CODIGO":"937.C35.1.A","FECHA":"","DESCRIPCION":"La Rioja y su futuro. 100 ciudades argentinas.","SOPORTE":"N","DURACION":"","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"","FILE_ID":"","TIPO":"","ARCHIVO":""},{"CODIGO":"940.C35.1.A","FECHA":"","DESCRIPCION":"Video | 100 ciudades argentinas: La Rioja","SOPORTE":"N","DURACION":"00:07:00","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1i2VbMcwjMjW7XsmzF9VDMyNAbtJNbzOu/view","FILE_ID":"1i2VbMcwjMjW7XsmzF9VDMyNAbtJNbzOu","TIPO":"video","ARCHIVO":"AGN_T940_35mm_ConAudio.mp4"},{"CODIGO":"343.C16.1.A","FECHA":"","DESCRIPCION":"Video | Noticiero Panamericano N 1545 | Comando en Jefe del Ejército, Luis Leoni, Sergio Villarruel, Enrique Llamas de Madariaga, Cruz Roja Argentina, Guardavidas, Simulacros, Accidentes, Agustín Rocca, Industria Siderúrgica, Oscar Mario Chescotta, Fuerza Aérea, Cohetes, Lanzamiento, José Cáceres Monié, José Martínez Zuviría, Deportes, Alpinismo, Mont Blanc. 00:05:58 Desde la base de Chamical provincia de La Rioja se produce el lanzamiento de un cohete experimental tripulado por un mono caí","SOPORTE":"N","DURACION":"00:07:45","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1Ihh-Cv1DaZee6Nc0zmXKxqMqTFjs-tyf/view","FILE_ID":"1Ihh-Cv1DaZee6Nc0zmXKxqMqTFjs-tyf","TIPO":"video","ARCHIVO":"t_343_53_35mm.m4v"},{"CODIGO":"1556.C16.1.A","FECHA":"1/1/1972","DESCRIPCION":"Video | Sucesos Argentinos N 1780 | Casa de la Rioja","SOPORTE":"N","DURACION":"00:05:21","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1vRqojNvQZLjkl7pmLsDwN_lztkJvqzQr/view","FILE_ID":"1vRqojNvQZLjkl7pmLsDwN_lztkJvqzQr","TIPO":"video","ARCHIVO":"1556.C16.VU354.002100.mp4"},{"CODIGO":"953.D30.AGN","FECHA":"","DESCRIPCION":"Audio | Relato e interpretación musical de Andrés Chazarreta (guitarra): \"La zamba de Vargas\".","SOPORTE":"N","DURACION":"00:03:40","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1n5YHhUV9MarYUVEm6t8tn4Mhr3I1P6WG/view","FILE_ID":"1n5YHhUV9MarYUVEm6t8tn4Mhr3I1P6WG","TIPO":"audio","ARCHIVO":"D_953B_01.wav"},{"CODIGO":"956.D30.AGN","FECHA":"","DESCRIPCION":"Audio | Relato e interpretación musical de Eliseo Ferreyra: 1) \"Coplas de chacarera\" (Chacarera de La Rioja) 2) Anulado. \"Coplas de Gato\" (guitarra). 3) \"Coplas de Gato\" (guitarra).","SOPORTE":"N","DURACION":"00:03:21","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1FlYWGllgz-yXRQUP3uIO9fKfjwuPXlH3/view | https://drive.google.com/file/d/1yo3V_w4qIQJyUmL9nUr5E0sFAsw_iUJQ/view","FILE_ID":"1FlYWGllgz-yXRQUP3uIO9fKfjwuPXlH3|1yo3V_w4qIQJyUmL9nUr5E0sFAsw_iUJQ","TIPO":"audio","ARCHIVO":"D_956A_01.wav | D_956B_01.wav"},{"CODIGO":"997.D40.AGN","FECHA":"9/7/1956","DESCRIPCION":"Audio | Visita del Presidente Provisional de facto de la Nación Gral. Pedro Eugenio Aramburu a la Ciudad de La Rioja. Parte 1.","SOPORTE":"N","DURACION":"00:17:17","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1cA6lHqpu1_p7POEDmuNnfNyzaKXj7f5f/view","FILE_ID":"1cA6lHqpu1_p7POEDmuNnfNyzaKXj7f5f","TIPO":"audio","ARCHIVO":"D_997A_01.wav"},{"CODIGO":"997.D40.AGN","FECHA":"9/7/1956","DESCRIPCION":"Audio | Visita del Presidente Provisional de facto de la Nación Gral. Pedro Eugenio Aramburu a la Ciudad de La Rioja. Parte 2.","SOPORTE":"N","DURACION":"00:11:33","SONIDO":"Muda","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1rigCA86MrZYJc92fFFK9nFYvfRBMnFlR/view","FILE_ID":"1rigCA86MrZYJc92fFFK9nFYvfRBMnFlR","TIPO":"audio","ARCHIVO":"D_997B_01.wav"},{"CODIGO":"624.VB.000027.A","FECHA":"","DESCRIPCION":"Video | [Llegada de Juan D Perón a la Argentina] | Héctor J. Cámpora, Raúl Lastiri,","SOPORTE":"N","DURACION":"01:03:35","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1Xj8MWWk593s7Rx_e_1MC0nwOAJviWCIG/view","FILE_ID":"1Xj8MWWk593s7Rx_e_1MC0nwOAJviWCIG","TIPO":"video","ARCHIVO":"VB624.000027.mp4"},{"CODIGO":"871.VU.000332.A","FECHA":"","DESCRIPCION":"[Acto político en la provincia La Rioja en relación al diferendo por el Canal de Beagle ] | CONFLICTO POR EL CANAL DE BEAGLE","SOPORTE":"Filmico","DURACION":"00:25:14","SONIDO":"Sonora","COLOR":"Color","IMAGEN":"","URL":"https://drive.google.com/file/d/1fOpv2Es2IM1wACwuTqgycrnmaEtnOyLf/view","FILE_ID":"1fOpv2Es2IM1wACwuTqgycrnmaEtnOyLf","TIPO":"video","ARCHIVO":"871_VU000332_1.mp4"},{"CODIGO":"871.VU.003246.A","FECHA":"","DESCRIPCION":"[Conferencia de Prensa de Dante Caputo ( Ministro de Relaciones Exteriores ) | Caputo, Dante en La Rioja","SOPORTE":"Filmico","DURACION":"00:08:18","SONIDO":"Sonora","COLOR":"Color","IMAGEN":"","URL":"https://drive.google.com/file/d/1CPsVLjl0nEtT57xjmbf4vZeDwowq1__g/view","FILE_ID":"1CPsVLjl0nEtT57xjmbf4vZeDwowq1__g","TIPO":"video","ARCHIVO":"871_VU003246_1.mp4"},{"CODIGO":"845.VU.002353.A","FECHA":"","DESCRIPCION":"Video | [Discuros de Carlos S. Menem y Raúl Alfonsín ]","SOPORTE":"Filmico","DURACION":"00:03:28","SONIDO":"Sonora","COLOR":"Color","IMAGEN":"","URL":"https://drive.google.com/file/d/1nkECJZrvHkuVzMYjQlJFkXe1ANW2B3E3/view","FILE_ID":"1nkECJZrvHkuVzMYjQlJFkXe1ANW2B3E3","TIPO":"video","ARCHIVO":"845_VU002353_1.mp4"},{"CODIGO":"610.VB.001300.A","FECHA":"1/12/1975","DESCRIPCION":"Video | [Entrevista a Dr. Carlos S. Menem, Gobernador de La Rioja]","SOPORTE":"N","DURACION":"00:02:58","SONIDO":"Sonora","COLOR":"B","IMAGEN":"","URL":"https://drive.google.com/file/d/1oxpkc3swG7SYug0xvgDByM_LHE1BhO2m/view","FILE_ID":"1oxpkc3swG7SYug0xvgDByM_LHE1BhO2m","TIPO":"video","ARCHIVO":"VB610.001300.mp4"},{"CODIGO":"13.OCG.5.A","FECHA":"30/5/1996","DESCRIPCION":"Video | [Acto de entrega de ambulancias Rioja-La Pampa]","SOPORTE":"Filmico","DURACION":"00:03:27","SONIDO":"Sonora","COLOR":"Color","IMAGEN":"","URL":"https://drive.google.com/file/d/1fJF5v6UHISUBM0qWLIT1afhM4OBuGvlf/view","FILE_ID":"1fJF5v6UHISUBM0qWLIT1afhM4OBuGvlf","TIPO":"video","ARCHIVO":"13.OG.5_1.mp4"}];
 const FECHA_INSTANTANEA = "16/08/2026";
@@ -522,7 +498,7 @@ function urlEnVivo(){
   const cb="&_cb="+Date.now();
   if(CONFIG.CSV_PUBLICADO) return CONFIG.CSV_PUBLICADO+(CONFIG.CSV_PUBLICADO.includes("?")?"&":"?")+"_cb="+Date.now();
   return `https://docs.google.com/spreadsheets/d/${CONFIG.SHEET_ID}/gviz/tq`
-       + `?tqx=out:csv&sheet=${encodeURIComponent(CONFIG.HOJA)}`+cb;
+    + `?tqx=out:csv&sheet=${encodeURIComponent(CONFIG.HOJA)}`+cb;
 }
 function estado(clase,texto){
   const f=$("#franjaEstado");
@@ -532,7 +508,6 @@ function estado(clase,texto){
 function ahora(){
   return new Date().toLocaleString("es-AR",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});
 }
-
 async function cargar(manual){
   const btn=$("#btnActualizar");
   btn.disabled=true; btn.classList.add("cargando");
@@ -576,7 +551,6 @@ async function cargar(manual){
    ============================================================ */
 const filtros={tipo:null,decada:null,sonido:null,color:null};
 const ETIQ_TIPO={video:"Video",audio:"Audio",imagen:"Imagen"};
-
 function normColor(v){
   const n=norm(v);
   if(n.startsWith("col")) return "Color";
@@ -614,7 +588,6 @@ function construirFiltros(){
   pintarChips($("#filtroSonido"),sonidos,"sonido");
   pintarChips($("#filtroColor"),colores,"color");
 }
-
 function aplicar(){
   const q=norm($("#buscar").value.trim());
   const terminos=q?q.split(/\s+/):[];
@@ -629,7 +602,6 @@ function aplicar(){
   $("#limpiarBusqueda").hidden = !$("#buscar").value;
   const hayFiltros = filtros.tipo||filtros.decada!==null||filtros.sonido||filtros.color||$("#buscar").value;
   $("#btnLimpiarFiltros").hidden = !hayFiltros;
-
   const ul=$("#listado"); ul.innerHTML="";
   if(!res.length){
     ul.innerHTML='<li class="vacio">No se encontraron registros con esos criterios.</li>';
@@ -656,7 +628,6 @@ function aplicar(){
    Ficha y reproductor
    ============================================================ */
 let claveActiva=null, parteActiva=0;
-
 function marcarTiempos(txt){
   return esc(txt).replace(/\b(\d{2}:\d{2}:\d{2})\b/g,'<span class="marca-tiempo">$1</span>');
 }
@@ -678,7 +649,6 @@ function pintarReproductor(r){
   if(enlace && r.ids[parteActiva])
     enlace.href=`https://drive.google.com/file/d/${r.ids[parteActiva]}/view`;
 }
-
 function mostrar(clave,scroll){
   const r=REGISTROS.find(x=>x.clave===clave);
   if(!r) return;
@@ -687,82 +657,71 @@ function mostrar(clave,scroll){
   document.body.classList.add("viendo-ficha");
   document.querySelectorAll("#listado button").forEach(b=>
     b.setAttribute("aria-current", b.dataset.clave===clave?"true":"false"));
-
   const varias=r.ids.length>1;
   const partes=varias
     ? `<div class="partes" id="partesRepro">`+r.ids.map((_,i)=>
         `<button type="button" aria-pressed="${i===0}" onclick="cambiarParte(${i})">Parte ${i+1}</button>`).join("")+`</div>`
     : "";
-
   $("#detalle").innerHTML=`
-  <div class="ficha">
-    <button type="button" class="btn-volver" onclick="volver()">&larr; Volver al listado</button>
-
-    <div class="ficha-etiquetas">
-      <span class="etiqueta">${esc(ETIQ_TIPO[r.tipo]||r.tipo)}</span>
-      ${r.anio?`<span class="etiqueta neutra">${r.anio}</span>`:`<span class="etiqueta neutra">Sin fecha</span>`}
-      ${r.sonido?`<span class="etiqueta neutra">${esc(normSonido(r.sonido))}</span>`:""}
-      ${r.color?`<span class="etiqueta neutra">${esc(normColor(r.color))}</span>`:""}
-    </div>
-
-    <h2>${esc(r.titulo)}</h2>
-    <p class="codigo-linea">
-      <code>${esc(r.codigo)}</code>
-      ${r.fecha?`<span>Filmación: ${esc(r.fecha)}</span>`:""}
-      <button type="button" class="btn-enlace" onclick="copiarEnlace(this)">Copiar enlace</button>
-    </p>
-
-    <div class="reproductor">
-      <div class="reproductor-barra">
-        <span>${r.tipo==="audio"?"Registro sonoro":"Registro audiovisual"}</span>
-        ${partes}
+    <div class="ficha">
+      <button type="button" class="btn-volver" onclick="volver()">&larr; Volver al listado</button>
+      <div class="ficha-etiquetas">
+        <span class="etiqueta">${esc(ETIQ_TIPO[r.tipo]||r.tipo)}</span>
+        ${r.anio?`<span class="etiqueta neutra">${r.anio}</span>`:`<span class="etiqueta neutra">Sin fecha</span>`}
+        ${r.sonido?`<span class="etiqueta neutra">${esc(normSonido(r.sonido))}</span>`:""}
+        ${r.color?`<span class="etiqueta neutra">${esc(normColor(r.color))}</span>`:""}
       </div>
-      <div id="zonaRepro"></div>
-      <div class="pie-repro">
-        <span>${esc(r.archivos[0]||"")}</span>
-        ${r.ids.length?`<a id="enlaceDrive" href="#" target="_blank" rel="noopener">Abrir en pantalla completa &nearr;</a>`:""}
+      <h2>${esc(r.titulo)}</h2>
+      <p class="codigo-linea">
+        <code>${esc(r.codigo)}</code>
+        ${r.fecha?`<span>Filmación: ${esc(r.fecha)}</span>`:""}
+        <button type="button" class="btn-enlace" onclick="copiarEnlace(this)">Copiar enlace</button>
+      </p>
+      <div class="reproductor">
+        <div class="reproductor-barra">
+          <span>${r.tipo==="audio"?"Registro sonoro":"Registro audiovisual"}</span>
+          ${partes}
+        </div>
+        <div id="zonaRepro"></div>
+        <div class="pie-repro">
+          <span>${esc(r.archivos[0]||"")}</span>
+          ${r.ids.length?`<a id="enlaceDrive" href="#" target="_blank" rel="noopener">Abrir en pantalla completa &nearr;</a>`:""}
+        </div>
       </div>
-    </div>
-
-    ${r.contenido.length?`
-    <section class="bloque">
-      <h3>Contenido</h3>
-      ${r.contenido.map(p=>`<p>${marcarTiempos(p)}</p>`).join("")}
-    </section>`:""}
-
-    <section class="bloque">
-      <h3>Ficha técnica</h3>
-      <dl class="tecnica">
-        <dt>Código</dt><dd>${esc(r.codigo)||"—"}</dd>
-        <dt>Fecha</dt><dd>${esc(r.fecha)||"Sin dato"}</dd>
-        <dt>Soporte</dt><dd>${esc(r.soporte&&r.soporte!=="N"?r.soporte:"Fílmico")}</dd>
-        <dt>Duración</dt><dd>${esc(r.duracion)||"Sin dato"}</dd>
-        <dt>Sonido</dt><dd>${esc(normSonido(r.sonido))}</dd>
-        <dt>Color</dt><dd>${esc(normColor(r.color))}</dd>
-        ${r.archivos.length?`<dt>Archivo</dt><dd>${r.archivos.map(esc).join("<br>")}</dd>`:""}
-      </dl>
-    </section>
-
-    ${r.imagenes.length?`
-    <section class="bloque">
-      <h3>Material gráfico</h3>
-      <div class="galeria">${r.imagenes.map(u=>
-        `<img src="${esc(u)}" alt="Material gráfico de ${esc(r.titulo)}" loading="lazy">`).join("")}</div>
-    </section>`:""}
-
-    <section class="bloque">
-      <h3>Cómo citar</h3>
-      <p>Archivo General de la Nación, «${esc(r.titulo)}»${r.fecha?", "+esc(r.fecha):""}.
-         Código ${esc(r.codigo)}. Acervo Audiovisual AGN — La Rioja,
-         Gobierno de la Provincia de La Rioja.</p>
-    </section>
-  </div>`;
-
+      ${r.contenido.length?`
+      <section class="bloque">
+        <h3>Contenido</h3>
+        ${r.contenido.map(p=>`<p>${marcarTiempos(p)}</p>`).join("")}
+      </section>`:""}
+      <section class="bloque">
+        <h3>Ficha técnica</h3>
+        <dl class="tecnica">
+          <dt>Código</dt><dd>${esc(r.codigo)||"—"}</dd>
+          <dt>Fecha</dt><dd>${esc(r.fecha)||"Sin dato"}</dd>
+          <dt>Soporte</dt><dd>${esc(r.soporte&&r.soporte!=="N"?r.soporte:"Fílmico")}</dd>
+          <dt>Duración</dt><dd>${esc(r.duracion)||"Sin dato"}</dd>
+          <dt>Sonido</dt><dd>${esc(normSonido(r.sonido))}</dd>
+          <dt>Color</dt><dd>${esc(normColor(r.color))}</dd>
+          ${r.archivos.length?`<dt>Archivo</dt><dd>${r.archivos.map(esc).join("<br>")}</dd>`:""}
+        </dl>
+      </section>
+      ${r.imagenes.length?`
+      <section class="bloque">
+        <h3>Material gráfico</h3>
+        <div class="galeria">${r.imagenes.map(u=>
+          `<img src="${esc(u)}" alt="Material gráfico de ${esc(r.titulo)}" loading="lazy">`).join("")}</div>
+      </section>`:""}
+      <section class="bloque">
+        <h3>Cómo citar</h3>
+        <p>Archivo General de la Nación, «${esc(r.titulo)}»${r.fecha?", "+esc(r.fecha):""}.
+        Código ${esc(r.codigo)}. Acervo Audiovisual AGN — La Rioja,
+        Gobierno de la Provincia de La Rioja.</p>
+      </section>
+    </div>`;
   pintarReproductor(r);
   if(scroll) $("#detalle").scrollTop=0;
   $("#detalle").focus({preventScroll:true});
 }
-
 window.cambiarParte=function(i){
   parteActiva=i;
   pintarReproductor(REGISTROS.find(x=>x.clave===claveActiva));
@@ -809,9 +768,7 @@ $("#listado").addEventListener("keydown",e=>{
   const j=e.key==="ArrowDown"?Math.min(i+1,bs.length-1):Math.max(i-1,0);
   bs[j].focus();
 });
-
 cargar(false);
 </script>
 </body>
 </html>
-
